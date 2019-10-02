@@ -32,39 +32,7 @@ Function MyASC(OneChar)
   If OneChar = "" Then MyASC = 0 Else MyASC = Asc(OneChar)
 End Function
 
-function ValidaExtencion(ext)
-	Select Case LCase(ext)
-	  Case ".jpg"
-		tipo = "image/jpg"
-	  Case ".jpeg"
-		tipo = "image/jpeg"
-	  Case ".png"
-		tipo = "image/png"
-	  Case ".gif"
-		tipo = "image/gif"
-	  Case ".bmp"
-		tipo = "image/bmp"
-	  Case else
-		tipo = null
-	End Select 
-end function
-function XML()
-	xml = "<dataset>"
-	xml = xml & "<Plataforma>0</Plataforma>"
-	xml = xml & "<CodigoSistema>1</CodigoSistema>"
-	xml = xml & "<AreaDesarrollo>2</AreaDesarrollo>"
-	xml = xml & "<TipoDocumento>99</TipoDocumento>"
-	xml = xml & "<NameAPI>Cas_Service</NameAPI>"
-	xml = xml & "<KeyAPI>39fafb5d3c1b1649e501cb87e522e9d3</KeyAPI>"
-	xml = xml & "<User_Rut>"&rut&"</User_Rut>"
-	xml = xml & "<Img_Firma>"&base64&"</Img_Firma>"
-	xml = xml & "<Img_Nombre>"&name&"</Img_Nombre>"
-	xml = xml & "<Img_Tipo>"&tipo&"</Img_Tipo>"
-	xml = xml & "<Img_Tamano>"&tamano&"</Img_Tamano>"
-	xml = xml & "</dataset>"
-	response.write Certificado
-end function
-  Function BinaryToString(Binary)
+Function BinaryToString(Binary)
     '2001 Antonin Foller, PSTRUH Software
     'Optimized version of PureASP conversion function
     'Selects the best algorithm to convert binary data to String data
@@ -78,4 +46,4 @@ end function
       TempString = MBBinaryToString(Binary)
     end if
     BinaryToString = TempString
-  End Function
+End Function
