@@ -67,17 +67,17 @@ End Function
 
 ' Para archivos, previo a codificar
 Function BinaryToString(Binary)
-    '2001 Antonin Foller, PSTRUH Software
-    'Optimized version of PureASP conversion function
-    'Selects the best algorithm to convert binary data to String data
     Dim TempString 
-
     On Error Resume Next
-    'Recordset conversion has a best functionality
     TempString = RSBinaryToString(Binary)
-    If Len(TempString) <> LenB(Binary) then'Conversion error
-      'We have to use multibyte version of BinaryToString
+    If Len(TempString) <> LenB(Binary) then
       TempString = MBBinaryToString(Binary)
     end if
     BinaryToString = TempString
 End Function
+
+
+
+'Acá la llamas
+dim file = Upload("File").Value
+base64 = Base64Encode(BinaryToString(file))
